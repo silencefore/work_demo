@@ -1,0 +1,520 @@
+<link rel="stylesheet" href="../js/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="../css/report-style.css">
+<link rel="stylesheet" href="../js/layui/css/layui.css">
+<body>
+    <div id="form-content" class="container-fluid">
+        <form class="form-horizontal">
+            <div id="dragslot" class="container" style="width:100%;padding:0;">
+                <div id="contend" class="slot-list"></div>
+                <div class="submit-button"></div>
+            </div>
+        </form>
+    </div>
+    <!--评分-->
+    <!-- Hip---HarrisTable  -->
+    <div id="HarrisTable" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="Hip---髋关节功能Harris评分表">
+        <div class="modal-dialog modal-sm" role="document" style="width: 700px;">
+            <div class="modal-content">
+                <div class="scoreHeader">Hip---髋关节功能Harris评分表</div>
+                <div class="scoreTable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;"></th>
+                                <th>关于主诉疼痛</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>44分</td>
+                                <td>
+                                    <div score="44" class="check-item">无痛或可以忽略</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>40分</td>
+                                <td>
+                                    <div score="40" class="check-item">时有隐痛，不影响活动</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>30分</td>
+                                <td>
+                                    <div score="30" class="check-item">轻度疼痛，日常生活不受影响，过量活动可有中度疼痛可服NSAID类止痛药</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20分</td>
+                                <td>
+                                    <div score="20" class="check-item">中度疼痛，可忍受，但常因此废弃一些活动，日常活动稍受限，但能正常工作，常服NSAID止痛药</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10分</td>
+                                <td>
+                                    <div score="10" class="check-item">剧痛，活动严重受限</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0分</td>
+                                <td>
+                                    <div score="0" class="check-item">病废，卧床仍剧痛，因疼痛被迫长期卧床</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>步态</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;"></th>
+                                <th>步态跛行</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11分</td>
+                                <td>
+                                    <div score="11" class="check-item">无</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8分</td>
+                                <td>
+                                    <div score="8" class="check-item">轻度</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5分</td>
+                                <td>
+                                    <div score="5" class="check-item">中度</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0分</td>
+                                <td>
+                                    <div score="0" class="check-item">重度</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;"></th>
+                                <th>行走距离</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11分</td>
+                                <td>
+                                    <div score="11" class="check-item">无限制</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8分</td>
+                                <td>
+                                    <div score="8" class="check-item">600米</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5分</td>
+                                <td>
+                                    <div score="5" class="check-item">200-300米</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2分</td>
+                                <td>
+                                    <div score="2" class="check-item">限于室内</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0分</td>
+                                <td>
+                                    <div score="0" class="check-item">卧床或坐椅</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;"></th>
+                                <th>助行装置</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11分</td>
+                                <td>
+                                    <div score="11" class="check-item">无</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7分</td>
+                                <td>
+                                    <div score="7" class="check-item">长距离行走需单手杖</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5分</td>
+                                <td>
+                                    <div score="5" class="check-item">大多时间需单手杖</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3分</td>
+                                <td>
+                                    <div score="3" class="check-item">需单拐</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2分</td>
+                                <td>
+                                    <div score="2" class="check-item">需双手杖</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0分</td>
+                                <td>
+                                    <div score="0" class="check-item">需双拐或无法行走</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>日常生活</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;"></th>
+                                <th>上下楼梯</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4分</td>
+                                <td>
+                                    <div score="4" class="check-item">一步一阶不需扶手</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2分</td>
+                                <td>
+                                    <div score="2" class="check-item">一步一阶需扶栏杆</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1分</td>
+                                <td>
+                                    <div score="1" class="check-item">上下楼需人辅助</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0分</td>
+                                <td>
+                                    <div score="0" class="check-item">无法上下楼</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;"></th>
+                                <th>穿鞋袜</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4分</td>
+                                <td>
+                                    <div score="4" class="check-item">轻松</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2分</td>
+                                <td>
+                                    <div score="2" class="check-item">困难</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0分</td>
+                                <td>
+                                    <div score="0" class="check-item">不能穿鞋袜</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;"></th>
+                                <th>坐</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>5分</td>
+                                <td>
+                                    <div score="5" class="check-item">能舒适的坐任何椅子1小时</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3分</td>
+                                <td>
+                                    <div score="3" class="check-item">能舒适的坐高椅子半小时</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0分</td>
+                                <td>
+                                    <div score="0" class="check-item">在任何椅子上坐都不舒服</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;"></th>
+                                <th>乘车</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1分</td>
+                                <td>
+                                    <div score="1" class="check-item">能</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>0分</td>
+                                <td>
+                                    <div score="0" class="check-item">不能</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;"></th>
+                                <th>体征表现</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1分</td>
+                                <td>
+                                    <div score="1" class="check-item">固定屈曲挛缩小于30度</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1分</td>
+                                <td>
+                                    <div score="1" class="check-item">固定内收畸形小于10度</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1分</td>
+                                <td>
+                                    <div score="1" class="check-item">伸直位固定内旋畸形小于10度</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1分</td>
+                                <td>
+                                    <div score="1" class="check-item">两侧肢体长度相差3.2cm以内</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="margin-top: 20px;">
+                        <thead>
+                            <tr>
+                                <th colspan="3">查体结果（得分结果=A、B、C、D之和除以20）</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 80px;">A、屈曲</td>
+                                <td style="width: 200px;">
+                                    <div>
+                                        <select class="pfA">
+                                            <option value="0">0-45度以内</option>
+                                            <option value="1">45-90度以内</option>
+                                            <option value="2">90-110度以内</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pfA-0">
+                                        <input class="inputText" lv="1.0" /> *1.0=&nbsp;
+                                        <input class="outputText" disabled/>(A)
+                                    </div>
+                                    <div class="pfA-1" style="display: none">
+                                        <input class="inputText" lv="0.6" /> *0.6=
+                                        <input class="outputText" disabled/>(A)
+                                    </div>
+                                    <div class="pfA-2" style="display: none">
+                                        <input class="inputText" lv="0.3" /> *0.3=
+                                        <input class="outputText" disabled/>(A)
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>B、外展</td>
+                                <td>
+                                    <div>
+                                        <select class="pfB">
+                                            <option value="0">0-15度以内</option>
+                                            <option value="1">15-20度以内</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pfB-0">
+                                        <input class="inputText" lv="0.8" /> *0.8=
+                                        <input class="outputText" disabled/>(B)
+                                    </div>
+                                    <div class="pfB-1" style="display: none">
+                                        <input class="inputText" lv="0.3" /> *0.3=
+                                        <input class="outputText" disabled/>(B)
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>C、外旋</td>
+                                <td>
+                                    <div>0-15度以内</div>
+                                </td>
+                                <td>
+                                    <div class="pfC-0">
+                                        <input class="inputText" lv="0.4" /> *0.4=
+                                        <input class="outputText" disabled/>(C)
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>D、内收</td>
+                                <td>
+                                    <div>0-15度以内</div>
+                                </td>
+                                <td>
+                                    <div class="pfD-0">
+                                        <input class="inputText" lv="0.2" /> *0.2=
+                                        <input class="outputText" disabled/>(D)
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>特征表现（Trendelen试验）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div score="0" class="check-item text-left">阳性</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div score="0" class="check-item text-left">阴性</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="resultScore">得分：
+                    <span class="num">0</span><span class="num-score">分</span></div>
+                <div class="scoreFooter">
+                    <button class="calculate btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hip---Caprini血栓风险因素评估  -->
+    <div id="CapriniTable" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="Hip---Caprini血栓风险因素评估">
+        <div class="modal-dialog modal-sm" role="document" style="width: 800px;">
+            <div class="modal-content">
+                <div class="scoreHeader">Caprini血栓风险因素评估</div>
+                <div class="scoreTable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>危险因素（可多选）</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <table class="multiple">
+                        <tbody>
+                            <tr>
+                                <td>1分</td>
+                                <td>2分</td>
+                                <td>3分</td>
+                                <td>5分</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div score="1" class="check-item">年龄41-60岁</div>
+                                </td>
+                               
+                                <td>
+                                    <div score="2" class="check-item">年龄61-74岁</div>
+                                </td>
+                                <td>
+                                    <div score="3" class="check-item">年龄≥75岁</div>
+                                </td>
+                                <td>
+                                    <div score="5" class="check-item">脑卒中( ＜1个月)</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div score="1" class="check-item">小手术</div>
+                                </td>
+                              
+                                <td>
+                                    <div score="2" class="check-item">关节镜手术</div>
+                                </td>
+                                <td>
+                                    <div score="3" class="check-item">VTE史</div>
+                                </td>
+                                <td>
+                                    <div score="5" class="check-item">择期关节置换术</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div score="1" class="check-item">体质指数>25 kg/m²</div>
+                                </td>
+                               
+                                <td>
+                                    <div score="2" class="check-item">大型开放手术( > 45 min)</div>
+                                </td>
+                                <td>
+                                    <div score="3" class="check-item">VTE家族史</div>
+                                </td>
+                                <td>
+                                    <div score="5" class="check-item">髋、骨盆或下肢骨折</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div score="1" class="check-item">下肢肿胀</div>
+                                </td>
+                                
+                                <td>
+                                    <div score="2" class="check-item">腹腔镜手术( >45 min)</div>
+                                </td>
+                                <td>
+                                    <div score="3" class="check-item">凝血因子V Leiden突变</div>
+                                </td>

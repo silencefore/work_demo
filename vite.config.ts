@@ -44,9 +44,10 @@ export default {
         ]
     },
     css: {
-        modules: { //配置 CSS modules 的行为。选项将被传递给 postcss-modules。
+        devSourcemap:true,
+        modules:{
             scopeBehaviour: 'global',
-            // ...
+            generateScopedName:'[name]_[local]_[hash:5]'
         },
         preprocessorOptions: {
             less: {

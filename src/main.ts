@@ -27,9 +27,13 @@ let routerNew = createRouter({
     routes
 });
 routerNew.beforeEach(
-    (to,from)=>{
+    (to,from,next)=>{
+        let  pop = routerNew.getRoutes();
+
         console.log(to, from,'路由元');
-        return true
+        // return next({ ...to, replace: true });
+        next()
+        // next(to.path)
     }
 );
 routerNew.beforeResolve(

@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-microsoft-yahei: "Microsoft YaHei";
+  --font-alte-din-1451-mittelschrift: "Alte DIN 1451 Mittelschrift";
+  --font-din: DIN;
+
+  /* font sizes */
+  --font-size-xs: 12px;
+  --font-size-mini: 15px;
+  --font-size-xl: 20px;
+  --font-size-base: 16px;
+  --font-size-smi: 13px;
+  --font-size-sm: 14px;
+
+  /* Colors */
+  --color-whitesmoke-100: #f9fafb;
+  --primarylight-03: #bfe9f8;
+  --textghost: #abb6ba;
+  --textsecondary: #4a565a;
+  --primary: #0daade;
+  --color-royalblue: #465ed8;
+  --color-lavender: #e9ecfc;
+  --textprimary: #020e1d;
+  --primarylight-04: #edf9fc;
+  --color-white: #fff;
+
+  /* border radiuses */
+  --br-10xs: 3px;
+  --br-12xs: 1px;
+}

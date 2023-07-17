@@ -38,9 +38,118 @@
                     "tagDescription": "",
                     "ordinal": 0,
                     "id": 100216,
+                    "parentId": 100180,
+                },
+                "children":[ {
+                    "startIndex": 190,
+                    "endIndex": 192,
+                    "termTag": 100216,
+                    "termTagName": "疾病",
+                    "color": "#E41D9B",
+                    "tag": {
+                        "tagId": 100216,
+                        "tagGroupId": 100038,
+                        "tagName": "疾病223",
+                        "tagColor": "#E41D9B",
+                        "tagStatus": 2,
+                        "createTime": "2022-06-10 16:04:01",
+                        "updateTime": "2022-11-10 11:16:12",
+                        "tagParentId": 100180,
+                        "tagDescription": "",
+                        "ordinal": 0,
+                        "id": 100216,
+                        "parentId": 100180
+                    },
+                    "children":[{
+                        "startIndex": 191,
+                        "endIndex": 192,
+                        "termTag": 100216,
+                        "termTagName": "疾病",
+                        "color": "#E41D9B",
+                        "tag": {
+                            "tagId": 100216,
+                            "tagGroupId": 100038,
+                            "tagName": "疾病22223",
+                            "tagColor": "#E41D9B",
+                            "tagStatus": 2,
+                            "createTime": "2022-06-10 16:04:01",
+                            "updateTime": "2022-11-10 11:16:12",
+                            "tagParentId": 100180,
+                            "tagDescription": "",
+                            "ordinal": 0,
+                            "id": 100216,
+                            "parentId": 100180
+                        }
+                    }]
+                }]
+
+            },
+            {
+                "startIndex": 192,
+                "endIndex": 200,
+                "termTag": 100216,
+                "termTagName": "疾病",
+                "color": "#E41D9B",
+                "tag": {
+                    "tagId": 100216,
+                    "tagGroupId": 100038,
+                    "tagName": "疾病",
+                    "tagColor": "#E41D9B",
+                    "tagStatus": 2,
+                    "createTime": "2022-06-10 16:04:01",
+                    "updateTime": "2022-11-10 11:16:12",
+                    "tagParentId": 100180,
+                    "tagDescription": "",
+                    "ordinal": 0,
+                    "id": 100216,
                     "parentId": 100180
-                }
-            }
+                },
+                "children":[
+                    {
+                        "startIndex": 194,
+                        "endIndex": 200,
+                        "termTag": 100216,
+                        "termTagName": "疾病",
+                        "color": "#E41D9B",
+                        "tag": {
+                            "tagId": 100216,
+                            "tagGroupId": 100038,
+                            "tagName": "疾病",
+                            "tagColor": "#E41D9B",
+                            "tagStatus": 2,
+                            "createTime": "2022-06-10 16:04:01",
+                            "updateTime": "2022-11-10 11:16:12",
+                            "tagParentId": 100180,
+                            "tagDescription": "",
+                            "ordinal": 0,
+                            "id": 100216,
+                            "parentId": 100180
+                        },
+                        "children":[
+                            {
+                                "startIndex": 196,
+                                "endIndex": 197,
+                                "termTag": 100216,
+                                "termTagName": "疾病",
+                                "color": "#E41D9B",
+                                "tag": {
+                                    "tagId": 100216,
+                                    "tagGroupId": 100038,
+                                    "tagName": "疾病",
+                                    "tagColor": "#E41D9B",
+                                    "tagStatus": 2,
+                                    "createTime": "2022-06-10 16:04:01",
+                                    "updateTime": "2022-11-10 11:16:12",
+                                    "tagParentId": 100180,
+                                    "tagDescription": "",
+                                    "ordinal": 0,
+                                    "id": 100216,
+                                    "parentId": 100180
+                                },
+                            }]
+                    }
+                ]
+            },
         ]
     },
     {

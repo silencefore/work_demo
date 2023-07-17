@@ -7,19 +7,20 @@ import {h, resolveComponent} from 'vue'
 
 export default [
     {
-        path: '/:nofound(.*)+',
+        path: '/:nofound*',
         redirect: '/error',
         children: []
     },
     {
-        path: '/404',
+        path: '',
         component: {
             render: () => h('div', 404),
         },
         alias:'/error',
         children: [],
         meta: { re: true },
-    },{
+    },
+    {
         path: '/:intro(intro)',
         component: ()=>import('/@/components/design.vue'),
         children: [],

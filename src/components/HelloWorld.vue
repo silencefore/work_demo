@@ -4,7 +4,7 @@ import list,{text} from '/@/mock/index'
 import {
   ref,
   shallowReactive,
-    reactive,
+  reactive,
   shallowRef,
   defineExpose,
   getCurrentInstance,
@@ -19,7 +19,7 @@ import _ from 'lodash-es';
 import {trigger} from "@vue/reactivity";
 
 console.log(resolveComponent("router-view"),'router-view');
-
+// console.log(context,'===>this')
 interface Props {
   msg?: string,
   default?:number
@@ -39,6 +39,7 @@ console.log(useStorePinia());
 const storeX: Store<any> = useStore();
 (<any>window).storeX = storeX;
 const {proxy}:ComponentInternalInstance = getCurrentInstance()!;
+console.log(proxy,'===>this');
 console.log(proxy!.$route, 222222);
 const store = storeOption();
 store.$subscribe((mutation, state) => {
@@ -75,19 +76,27 @@ console.log(_.cloneDeep(person));
 let that = reactive({textMgs:{content:text}});
 (window as any).that = that;
 function preventMarking(arg) {
-  function deepAnalysis(param) {
+
+  // 换行符 转为前端标准
+  that.textMgs.content = that.textMgs.content.replaceAll(
+      "<br>",
+      "<br/>"
+  );
+  //为第一层的数据绑定 startIndexBak 属性
+  arg.forEach(el=>el.startIndexBak = el.startIndex)
+  function deepAnalysis(param,text) {
+    //排序将每一层的数据按照起始索引 倒序排序（由后先前处理数据不会改变前面的位置）
     param = param.sort((a, b) => b.startIndex - a.startIndex);
     param.forEach((item) => {
-      let text = that.textMgs.content;
+      //获取被截取的字符串
       let str = text.substring(item.startIndex, item.endIndex);
       let treeList = item.tag;
-
+      //gettime 获取到的时间戳可能相同
       function getRandomIntInclusive(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
       }
-
       let id =
           treeList.tagId +
           "-" +
@@ -107,23 +116,28 @@ function preventMarking(arg) {
       span.setAttribute("id", "span" + id);
       $(span).before("&nbsp;");
       $(span).after("&nbsp;");
-      that.textMgs.content = that.textMgs.content.replaceAll(
-          "<br>",
-          "<br/>"
-      );
-      that.textMgs.content =
-          that.textMgs.content.substring(0, item.startIndex) +
-          "&nbsp;" +
-          span.outerHTML +
-          "&nbsp;" +
-          that.textMgs.content.substring(item.endIndex);
+      let result = span.outerHTML
       if (item.children && item.children.length !== 0) {
-        debugger
-        deepAnalysis(item.children);
+        result = deepAnalysis(item.children.map(el => ({
+              ...el,
+              //result.indexOf(str) 当前层过滤掉文本节点之前的 标签元素
+              startIndex: el.startIndex + result.indexOf(str) -  item.startIndexBak,
+              startIndexBak: el.startIndex,
+              endIndex: el.endIndex + result.indexOf(str) - item.startIndexBak
+            })),
+            result,
+        );
       }
+      text =
+          text.substring(0, item.startIndex) +
+          "&nbsp;" +
+          result +
+          "&nbsp;" +
+          text.substring(item.endIndex);
     });
+    return text
   }
-  deepAnalysis(arg);
+  that.textMgs.content  = deepAnalysis(arg,that.textMgs.content);
 }
 (window as any).preventMarking = preventMarking;
 let  props = withDefaults(defineProps<Props>(), {
@@ -136,8 +150,8 @@ defineExpose({person,msg})
 
 </script>
 <template>
-  <slot name="ptsd">12321</slot>
-    <p>{{ person }}</p>
+  <slot name="ptsd">12321</slot>？？？、
+  <p>{{ person }}</p>
   <div class="card">
     <button type="button" @click="count++">count is {{ person2 }}</button>
     <p>
@@ -165,8 +179,3 @@ defineExpose({person,msg})
   color: #888;
 }
 </style>
-<script lang="ts">
-export default {
-  name:'HelloWorld'
-}
-</script>
