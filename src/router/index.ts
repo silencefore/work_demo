@@ -6,20 +6,20 @@ import {h, resolveComponent} from 'vue'
 
 
 export default [
-    {
-        path: '/:nofound*',
-        redirect: '/error',
-        children: []
-    },
-    {
-        path: '',
-        component: {
-            render: () => h('div', 404),
-        },
-        alias:'/error',
-        children: [],
-        meta: { re: true },
-    },
+    // {
+    //     path: '/:nofound*',
+    //     redirect: '/error',
+    //     children: []
+    // },
+    // {
+    //     path: '',
+    //     component: {
+    //         render: () => h('div', 404),
+    //     },
+    //     alias:'/error',
+    //     children: [],
+    //     meta: { re: true },
+    // },
     {
         path: '/:intro(intro)',
         component: ()=>import('/@/components/design.vue'),
@@ -44,5 +44,9 @@ export default [
                 meta: { requiresAuth: true }
             }
         ]
+    },
+    {
+        path: '',
+        component: () => import('/@/components/demo.vue'),
     },
 ]
